@@ -1,0 +1,52 @@
+@import url('main.css');
+#start,
+#guess {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.input-layout {
+  display: grid;
+  row-gap: 10px;
+  grid-template-rows: 1fr 1fr;
+  padding: 0 10vw;
+}
+
+button {
+  grid-row: 2;
+}
+.input {
+  grid-row: 1;
+  border-radius: 10px;
+}
+.input-layout input {
+  background-color: hsla(146, 33%, 62%, 1);
+  border-radius: 10px;
+}
+.instructions {
+  background-color: rgb(255, 255, 255);
+  border-color: #e6b800;
+  border-width: 2px;
+  border-radius: 13px;
+  padding: 20px;
+  color: black;
+  align-self: center;
+}
+
+#showInstructions {
+  background-color: var(--black);
+  color: #fff;
+  border-bottom: 3px hsla(0, 0%, 20%, 1) solid;
+  border-top: 3px hsla(0, 0%, 20%, 1) solid;
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+.highGuess {
+  background-color: hsla(0, 41%, 57%, 1);
+  border-color: hsla(6, 82.2%, 42%, 1);
+}
+.lowGuess {
+  background-color: hsla(219, 46%, 53%, 1);
+  border-color: hsla(245, 80%, 53%, 1);
+}

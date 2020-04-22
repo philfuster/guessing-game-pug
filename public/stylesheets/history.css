@@ -1,0 +1,49 @@
+@import url('main.css');
+table,
+th,
+td {
+  border: 1px solid white;
+  text-align: center;
+}
+
+table {
+  justify-self: center;
+}
+
+th {
+  font-size: 1.4em;
+}
+
+td {
+  font-size: 1.3em;
+  font-weight: 800;
+  padding: 15px;
+}
+
+caption {
+  font-size: 3em;
+  color: var(--light-blue);
+  font-weight: 800;
+}
+
+thead {
+  text-align: center;
+}
+
+.gameDetailContent {
+  justify-content: center;
+  text-align: center;
+}
+
+.text-box p,
+#guesses {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.table-row:hover,
+.clickable-row:hover {
+  background-color: lightblue;
+  border-color: greenyellow;
+  cursor: pointer;
+}

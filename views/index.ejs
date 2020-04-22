@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascripts/index.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <main class="l-grid" role="main">
+      <div class="title">
+        <h1><%= title%></h1>
+      </div>
+      <nav class="nav nav--main l-grid" role="navigation">
+        <!-- Hamburber Menu -->
+        <label for="hamburger" class="nav__label">&#9776</label>
+        <input type="checkbox" id="hamburger">
+        <!-- List of nav links -->
+        <ul class="nav__ul l-grid">
+          <li>
+            <a class="nav-link" href="/start">Ready?</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-layout">
+        <div id="content" class="introduction text-content">
+          <h2>
+            Key Enhancements
+          </h2>
+          <div id="section-nav">
+            <ul>
+              <li class="section-selected">Express</li>
+              <li>UI/UX</li>
+            </ul>
+          </div>
+          <section class="feature-enhancement-1">
+            <!-- Express -->
+            <h3>
+              Express
+            </h3>
+            <p>
+              Express is a Javascript Framework that provides a robust set of
+              features for web and mobile applications.
+            </p>
+            <p>
+              This iteration of Guessing Game will focus on the routing
+              capabalities given by Express.
+            </p>
+          </section>
+          <section class="feature-enhancement-2 hidden">
+            <!-- UI/UX -->
+            <h3>
+              UI/UX
+            </h3>
+            <p>
+              I have been studying UI/UX lately in an attempt to hone my design
+              and presentation skills.
+            </p>
+            <p>
+              UI/UX is an important part of a Web Developers tool kit.
+              <br />
+              The following is more in depth information on how I am addressing
+              UI/UX this iteration of Guessing Game:
+            </p>
+            <!-- Color Palette -->
+            <h4>
+              Color Palette
+            </h4>
+            <p>
+              Color can have a profound affect on a user's experience and evoke
+              emotion.
+            </p>
+            <p>
+              I want skills to range across aspects of web development. Maybe
+              not an expert but capable to the point where I can fit into any
+              team doing what ever is necessary to further the task at hand.
+            </p>
+            <!-- Mobile First Development -->
+            <h4>
+              Mobile First Development
+            </h4>
+            <p>
+              The Mobile first approach is a tenet of
+              <strong>Progressive Enhancement</strong>
+              where instead of focusing on building the website for the most
+              advanced / capable browsers like in Graceful Degredation, the
+              focus is on building out from the content.
+            </p>
+            <p>
+              Websites were built to display content, and mobile first
+              development focuses on a great experience for all users across
+              devices, screen sizes, and resolutions.
+            </p>
+            <p>
+              Three technical ingredients for responsive web design are fluid
+              grids, flexible images, and media queries.
+            </p>
+          </section>
+
+        </div>
+      </div>
+      <nav class="nav nav--footer l-grid">
+        <a href="/start">Ready?</a>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>

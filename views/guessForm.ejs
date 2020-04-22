@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/stylesheets/guess.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascripts/guessForm.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <main class="l-grid" role="main">
+      <div class="title">
+        <h1><%= title%></h1>
+      </div>
+      <nav class="nav nav--main l-grid" role="navigation">
+        <!-- Hamburber Menu -->
+        <label for="hamburger" class="nav__label">&#9776</label>
+        <input type="checkbox" id="hamburger">
+        <!-- List of nav links -->
+        <ul class="nav__ul">
+          <li>
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/history">History</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-layout l-grid">
+        <div id="content" class="text-input">
+          <section id="guess">
+            <a class="nav-link" id="showInstructions" href="#"
+            >Instructions</a>
+            <h2 class="instructions hidden">
+              The server is thinking of a number between 1 and 10.
+            </h2>
+            <form id="guess-form">
+              <div class="input-layout">
+                <input
+                  type="text"
+                  name="guess"
+                  autocomplete="off"
+                  placeholder="Your Guess"
+                />
+                <button id="guess_input" type="button">Guess</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <ul id="guess-display">
+          <% if(result == 'too high') {%>
+          <li class="highGuess"><%= guess%> is <%= result%></li>
+          <%} else{%>
+          <li class="lowGuess"><%= guess%> is <%= result%></li>
+          <%}%>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
