@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title PAF Guessing Game with PUG
+    link(rel="stylesheet", href="/stylesheets/error.css")
+  body
+    .content-layout
+      #content.text-input
+        h1 Oops!
+        h2 We can't seem to find the page you are looking for.
+        h3 Error Code: #{error.status}
+        h3 Here are some helpful links instead:
+        ul#error-nav-links
+          a(href="/") Home
+        pre= error.stack

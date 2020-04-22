@@ -174,7 +174,7 @@ async function handleDetail(req, res) {
 /* GET index */
 router.get('/', function (req, res) {
   log('Serving index');
-  res.render(views.index, { title });
+  res.render(views.index, { title, message: 'hey from pug' });
 });
 
 /* GET start */
