@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width")
+    link(rel="stylesheet", href="/stylesheets/guess.css")
+    script(
+      src="https://code.jquery.com/jquery-3.5.0.js" 
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=",
+      crossorigin="anonymous")
+    title= title
+  body
+    header
+    main(class="l-grid" role="main")
+      .title
+        h1= title
+      nav(class="nav nav--main l-grid" role="navigation")
+        //- Hamburger Menu
+        label(for="hamburger" class="nav__label") &#9776
+        input(type="checkbox" id="hamburger")
+        ul(class="nav__ul l-grid")
+          li: a.nav-link(href="/") Home
+          li: a.nav-link(href="/history") History
+      .content-layout
+        #content.text-content
+          section#start
+            h2.instructions.
+              The server is thinking of a number between 1 and 10
+            form(id="guess-form" action="/guess" method="post")
+              .input-layout
+                input(
+                  type="text"
+                  name="guess"
+                  autocomplete="off"
+                  required
+                  placeholder="Your Guess"
+                  )
+                button#guess_input(type="submit") Guess
+            ul  
+            

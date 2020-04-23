@@ -2,11 +2,13 @@
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    script(src="/javascripts/index.js")
+    meta(name="viewport", content="width=device-width")
     link(rel="stylesheet", href="/stylesheets/index.css")
-    script(src="https://code.jquery.com/jquery-3.4.1.min.js", integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=",
+    script(
+      src="https://code.jquery.com/jquery-3.5.0.js" 
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=",
       crossorigin="anonymous")
+    script(src="/javascripts/index.js")
     title= title
   body
     header
@@ -23,3 +25,34 @@ html(lang="en")
       .content-layout
         #content(class="introduction text-content")
           h2 Key Enhancements
+          #section-nav
+            ul
+              li.section-selected PUG
+              li LESS
+          section.feature-enhancement-1
+            //- PUG
+            h3 Pug - node template engine
+            p.
+              Pug is a high-performance template engine heavily influenced by Haml and
+              implemented with JavaScript for Node.js and browsers.
+            h3 Rename from "Jade"
+            p.
+              Pug was formerly known as "jade". However, it was revealed to the
+              maintainers that "jade" is a registered trademark; as a result, they had to
+              change their name.
+            p.
+              Maintainers acquired permission to occupy the package name, but future
+              releases will be under the name "pug".
+          section(class="feature-enhancement-2 hidden")
+            h3 LESS - CSS preprocessor  
+            p.
+              LESS (which stands for Leaner Style Sheets) is backwards compatible language
+              extension for CSS.
+            p.
+              Because Less looks just like CSS, learning is a breeze. Less only makes a
+              few convenient additions to the CSS language, which is one of th reasons it
+              can be learned so quickly.
+        nav(class="nav nav--footer l-grid")
+          a(href="/start") Ready?
+          
+            
