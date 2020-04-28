@@ -9,17 +9,17 @@
 }
 
 .content-layout {
-  .l-grid;
+  .l-grid();
 }
 
 /*
   === nav module styles ===
 */
 .nav {
-  font-size: 1.2rem;
+  .l-grid();
   &--main {
     background-color: @black;
-    box-shadow: 0 0 5px 0 rgb(246, 246, 246);
+    box-shadow: 0 0 5px 0 @white;
   }
   &--footer {
     background-color: transparent;
@@ -27,10 +27,10 @@
     justify-content: center;
   }
   &--footer > a {
-    border: 3px solid #fff;
+    border: 3px solid @white;
     padding: 30px 120px;
     text-decoration: none;
-    box-shadow: inset 0 0 10px #fff;
+    box-shadow: inset 0 0 10px @white;
     color: #fff;
     font-weight: 800;
     text-align: center;
@@ -38,65 +38,54 @@
   //
   &__label {
     display: block;
-    color: #fff;
+    color: @white;
     font-style: normal;
     font-size: 2em;
-    padding: 10px 20px;
+    padding: 0.2em 0.5em;
     justify-self: stretch;
     text-align: end;
   }
-}
-
-.nav__ul {
-  display: none;
-  text-align: center;
-  background-color: @black;
-  font-size: 1.3em;
-}
-
-.nav > input[type='checkbox'] {
-  display: none;
-}
-
-.nav > input:checked ~ ul {
-  display: block;
-}
-
-.nav__ul > li {
-  display: block;
-  box-sizing: border-box;
-  border-bottom: 3px hsla(0, 0%, 20%, 1) solid;
-  padding: 1rem;
-}
-
-.nav__ul > li:first-child {
-  border-top: 3px hsla(0, 0%, 20%, 1) solid;
-}
-
-.nav__ul > li > a {
-  display: block;
-  text-decoration: none;
+  &__input {
+    display: none;
+    &:checked ~ ul {
+      display: block;
+    }
+  }
+  &__ul {
+    display: none;
+    text-align: center;
+    background-color: @black;
+    font-size: 1.3em;
+    & > li {
+      display: block;
+      box-sizing: border-box;
+      border-bottom: 3px @grey solid;
+      &:first-child {
+        border-top: 3px @grey solid;
+      }
+      & > a {
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* 
   === title module styles ===
  */
-// .title {
-//   display: flex;
-//   justify-content: center;
-// }
 .title > h1 {
   text-align: center;
   line-height: 1.3;
   font-weight: 700;
   hyphens: auto;
   white-space: pre;
-  color: hsla(219, 46%, 53%, 1);
+  color: @dark-blue;
 }
 
 #content {
   .l-grid();
-  color: hsla(146, 33%, 62%, 1);
+  color: @green;
   padding: 0 0.8rem;
   & p {
     font-weight: 600;
@@ -105,14 +94,13 @@
 }
 
 .nav-link {
-  border-radius: 10px;
-  padding: 10px;
   font-weight: 800;
-  color: hsla(0, 100%, 100%, 1);
+  color: @white;
   text-decoration: none;
+  padding: @default-padding;
   &:hover {
-    background-color: hsla(0, 0%, 20%, 1);
-    color: hsla(0, 100%, 100%, 1);
+    background-color: @grey;
+    color: @white;
     cursor: pointer;
   }
 }
@@ -139,7 +127,7 @@
   }
 
   .nav__ul > li {
-    border-right: 1px white solid !important;
+    border-right: 1px @white solid !important;
   }
 
   .nav__ul > li > a {
