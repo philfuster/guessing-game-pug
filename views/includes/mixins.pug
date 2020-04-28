@@ -1,0 +1,10 @@
+mixin nav-links(links)
+  ul(class="nav__ul l-grid")
+    for link in links
+      li: a.nav-link(href=link.path)= link.desc
+mixin head-links(links)
+  for link in links
+    link(rel=link.rel ? link.rel : 'stylesheet' href=link.href)
+mixin head-scripts(scripts)
+  for script in scripts
+    script(src=script.src)

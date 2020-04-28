@@ -134,5 +134,8 @@ temp/
 # Ignore all local history of files
 .history
 
+# Ignore Less Middleware output to css file
+*.css
+
 # End of https://www.gitignore.io/api/linux,node,VisualStudioCode
 n

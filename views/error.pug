@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width")
-    title PAF Guessing Game with PUG
-    link(rel="stylesheet", href="/stylesheets/error.css")
-  body
+extends ./layouts/main-layout.pug
+block head-link-list
+  +head-links([
+    {href:'/stylesheets/css/error.css'}
+  ])
+block nav-link-list
+  +nav-links([
+    {path: '/start', desc: 'Ready?'},
+    {path: '/', desc: 'Home'}
+  ])
+block content
+  main(role="main")
     .content-layout
-      #content.text-input
+      #content
         h1 Oops!
         h2 We can't seem to find the page you are looking for.
         h3 Error Code: #{error.status}
-        h3 Here are some helpful links instead:
+        p Here are some helpful links instead:
         ul#error-nav-links
-          a(href="/") Home
+          a(class="nav-link" href="/") Home
         pre= error.stack

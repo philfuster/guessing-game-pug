@@ -19,6 +19,7 @@ let db;
 async function initDb() {
   if (db) {
     log('Trying to init DB again!');
+    return;
   }
   try {
     await client.connect();

@@ -4,6 +4,8 @@ const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const less = require('less');
+const lessMiddleware = require('less-middleware');
 const debug = require('debug');
 // DB Module
 const { initDb } = require('./public/javascripts/db');
@@ -52,6 +54,15 @@ const app = express();
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
+    app.use(
+      lessMiddleware('/stylesheets/less', {
+        dest: '/stylesheets/css',
+        pathRoot: path.join(__dirname, '/public'),
+        compress: true,
+        force: true,
+        debug: true,
+      })
+    );
     app.use(express.static(path.join(__dirname, '/public')));
     app.use(express.static(path.join(__dirname, '/routes')));
     app.use(session(sess));

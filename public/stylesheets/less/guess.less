@@ -1,0 +1,53 @@
+@import 'main.less';
+#start {
+  .l-grid();
+}
+
+.input-layout {
+  .l-grid();
+  grid-auto-flow: row;
+  padding: 0 0.5rem;
+  &__btn {
+    background-image: linear-gradient(to bottom right, @green, @red);
+    font-weight: 600;
+  }
+  &__input {
+    background-color: hsla(146, 33%, 62%, 1);
+  }
+  &__input,
+  &__btn {
+    padding: 1.75em 1.5em;
+    font-size: 1.75em;
+    border-radius: 10px;
+  }
+}
+
+#guess-display li {
+  padding: 1em;
+  text-align: center;
+  list-style-type: none;
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.instructions {
+  background-color: rgb(255, 255, 255);
+  border-color: #e6b800;
+  border-width: 2px;
+  border-radius: 13px;
+  padding: 20px;
+  color: black;
+  text-align: center;
+}
+.highGuess {
+  background-color: hsla(0, 41%, 57%, 1);
+  border-color: hsla(6, 82.2%, 42%, 1);
+}
+.lowGuess {
+  background-color: hsla(219, 46%, 53%, 1);
+  border-color: hsla(245, 80%, 53%, 1);
+}

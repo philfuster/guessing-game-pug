@@ -1,55 +1,47 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width")
-    link(rel="stylesheet", href="/stylesheets/history.css")
-    script(
-      src="https://code.jquery.com/jquery-3.5.0.js" 
-      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=",
-      crossorigin="anonymous")
-    script(src="/javascripts/history.js")
-    title= title
-  body
-    header
-    main(class="l-grid" role="main")
-      .title
-        h1= title
-      nav(class="nav nav--main l-grid" role="navigation")
-        //- Hamburger Menu
-        label(for="hamburger" class="nav__label") &#9776
-        input(type="checkbox" id="hamburger")
-        ul(class="nav__ul l-grid")
-          li: a.nav-link(href="/") Home
-          li: a.nav-link(href="/start") Start
-      .content-layout
-        #content(class="text-content l-grid")
-          table#history_table
-            caption PAF Guessing Game History
-            thead
-              th Date
-              th Secret Number
-              th # of Guesses
-            each game, index in history
-              tr.table-row(data-objectid=game._id)
-                td(id=index) #{game.timeStamp}
-                td #{game.secretNumber}
-                td #{game.guesses.length}
-          section#game_detail.hidden
-            div(class="gameDetailContent l-grid")
-              h2 Guessing Game Detail
-              p#date
-              #secret-and-guess
-                .text-box#secret_number
-                  h3 Secret Number
-                  p#secret
-                .text-box
-                  h3 # of Guesses
-                  p#num_guesses
-              #guesses-layout
-                h3 Guesses
-                ul#guesses
-          nav(class="nav nav--footer l-grid")
-            a.nav-link(href="/start") Play
-            a#history(class="nav-link hidden") History
-            
+extends ./layouts/main-layout.pug
+block head-link-list
+  +head-links([
+    {href: '/stylesheets/css/history.css'}
+    ])
+block head-script-list
+  +head-scripts([
+    {src:'/javascripts/history.js'}
+  ])
+block nav-link-list
+  +nav-links([
+    {path: '/start', desc: 'Ready?'},
+    {path: '/', desc: 'Home'}
+    ])
+block content
+  main(role="main")
+    .content-layout
+      #content
+        table#history_table
+          caption PAF Guessing Game History
+          thead
+            th Date
+            th Secret Number
+            th # of Guesses
+          each game, index in history
+            tr.table-row(data-objectid=game._id)
+              td(id=index) #{game.timeStamp}
+              td #{game.secretNumber}
+              td #{game.guesses.length}
+        section#game_detail.hidden
+          div(class="gameDetailContent")
+            h2 Guessing Game Detail
+            p#date
+            #secret-and-guess
+              .text-box#secret_number
+                h3 Secret Number
+                p#secret
+              .text-box
+                h3 # of Guesses
+                p#num_guesses
+            #guesses-layout
+              h3 Guesses
+              ul#guesses
+        nav(class="nav nav--footer l-grid")
+          a.nav-link(href="/start") Play
+          a#history(class="nav-link hidden") History
+          

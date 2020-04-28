@@ -1,4 +1,4 @@
-@import url('main.css');
+@import 'main.less';
 
 #section-nav {
   display: grid;
@@ -14,12 +14,12 @@
 #section-nav ul li {
   font-size: 2em;
   font-weight: 800;
-  color: var(--red);
+  color: @red;
   padding: 10px 0;
   text-align: center;
 }
 .section-selected {
-  background-color: var(--light-blue);
+  background-color: @light-blue;
   border-radius: 20px;
 }
 h2 {
@@ -27,7 +27,7 @@ h2 {
 }
 .links a {
   text-decoration: none;
-  color: var(--green);
+  color: @green;
   font-weight: 700;
   text-align: center;
   justify-self: center;
